@@ -1,0 +1,168 @@
+---
+// 'use client';
+// import * as React from 'react';
+import { Image } from 'astro:assets';
+
+import {
+  IconHome2,
+  IconInfoHexagon,
+  IconComponents,
+  IconUsers,
+  IconMessages,
+  IconCalendarEvent,
+} from '@tabler/icons-react';
+import logo from '../assets/logo.svg';
+
+// import { Button } from '@/components/ui/button';
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+// } from '@/components/ui/dropdown-menu';
+
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from '@/components/ui/navigation-menu';
+import { IconMessageChatbot } from '@tabler/icons-react';
+import { IconTools } from '@tabler/icons-react';
+import { IconPlus } from '@tabler/icons-react';
+
+const mainPages = {
+  designsystems: {
+    url: '/',
+    title: 'Design Systems',
+    icon: IconComponents,
+  },
+  specialists: {
+    url: '/specialists',
+    title: 'Specialists',
+    icon: IconUsers,
+  },
+  interviews: {
+    url: '/interviews',
+    title: 'Interviews',
+    icon: IconMessages,
+  },
+  events: {
+    url: '/events',
+    title: 'Events',
+    icon: IconCalendarEvent,
+  },
+  tools: {
+    url: '/tools',
+    title: 'Tools',
+    icon: IconTools,
+  },
+  talks: {
+    url: '/talks',
+    title: 'Talks',
+    icon: IconMessageChatbot,
+  },
+  books: {
+    url: '/books',
+    title: 'Books',
+    icon: IconCalendarEvent,
+  },
+  submit: {
+    url: '/submit',
+    title: 'Submit Design System',
+    icon: IconPlus,
+  },
+  about: {
+    url: '/about',
+    title: 'About',
+    icon: IconInfoHexagon,
+  },
+};
+
+const requestPathname = new URL(Astro.request.url).pathname;
+---
+
+<nav class='fixed flex flex-col justify-between w-64 h-full px-4 pt-12 pb-8 text-sm border-r border-border'>
+  <div>
+    <a href='/' class='flex px-4 mb-10'><Image src={logo} class='w-10' alt='ANZ Design Systems logo' /></a>
+    <ul class='mb-8 list-none'>
+      {
+        Object.values(mainPages)
+          .slice(0, 4)
+          .map((entry) => {
+            const className = requestPathname === entry.url && 'active bg-muted';
+            const NavIcon = entry.icon ? <entry.icon size={16} className='stroke-1.5' /> : null;
+            return (
+              <li>
+                <a
+                  class={
+                    'items-center flex h-9 font-medium rounded-xl px-4 gap-3 hover:text-accent-foreground hover:bg-accent  ' +
+                    (className ? className : '')
+                  }
+                  href={entry.url}
+                >
+                  {NavIcon}
+                  {entry.title}
+                </a>
+              </li>
+            );
+          })
+      }
+    </ul>
+    <ul class='list-none'>
+      <h4 class='px-4 mb-2 font-normal text-muted-foreground'>Resources</h4>
+      {
+        Object.values(mainPages)
+          .slice(4, -2)
+          .map((entry) => {
+            const className = requestPathname === entry.url && 'active bg-muted';
+            const NavIcon = entry.icon ? <entry.icon size={16} className='' /> : null;
+            return (
+              <li>
+                <a
+                  class={
+                    'items-center flex h-9  font-medium rounded-xl px-4 gap-3 hover:text-accent-foreground hover:bg-accent  ' +
+                    (className ? className : '')
+                  }
+                  href={entry.url}
+                >
+                  {NavIcon}
+                  {entry.title}
+                </a>
+              </li>
+            );
+          })
+      }
+    </ul>
+  </div>
+  <div>
+    <ul class='list-none'>
+      {
+        Object.values(mainPages)
+          .slice(-2)
+          .map((entry) => {
+            const className = requestPathname === entry.url && 'active bg-muted';
+            const NavIcon = entry.icon ? <entry.icon size={16} className='' /> : null;
+            return (
+              <li>
+                <a
+                  class={
+                    'items-center flex h-9  font-medium rounded-xl px-4 gap-3 hover:text-accent-foreground hover:bg-accent  ' +
+                    (className ? className : '')
+                  }
+                  href={entry.url}
+                >
+                  {NavIcon}
+                  {entry.title}
+                </a>
+              </li>
+            );
+          })
+      }
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --core-black: 0 0 0%;
+    --core-white: 0 0 100%;
+    --amber-100: 39 100% 91%;
+    --amber-200: 39 100% 83%;
+    --amber-300: 39 100% 74%;
+    --amber-400: 39 100% 65%;
+    --amber-50: 39 100% 96%;
+    --amber-500: 39 100% 56%;
+    --amber-600: 39 100% 45%;
+    --amber-700: 39 100% 34%;
+    --amber-800: 39 100% 23%;
+    --amber-900: 39 100% 11%;
+    --amber-950: 39 100% 6%;
+    --blue-100: 225 100% 92%;
+    --blue-200: 225 100% 84%;
+    --blue-300: 225 100% 76%;
+    --blue-400: 225 100% 68%;
+    --blue-50: 225 100% 96%;
+    --blue-500: 225 100% 60%;
+    --blue-600: 225 100% 48%;
+    --blue-700: 225 100% 36%;
+    --blue-800: 225 100% 24%;
+    --blue-900: 225 100% 12%;
+    --blue-950: 225 100% 6%;
+    --green-100: 159 43% 91%;
+    --green-200: 158 44% 81%;
+    --green-300: 158 45% 72%;
+    --green-400: 158 45% 62%;
+    --green-50: 158 44% 95%;
+    --green-500: 158 45% 53%;
+    --green-600: 158 45% 42%;
+    --green-700: 158 45% 32%;
+    --green-800: 158 46% 21%;
+    --green-900: 157 46% 11%;
+    --green-950: 158 44% 5%;
+    --neutral-25: 240 100% 100%;
+    --neutral-50: 210 25% 98%;
+    --neutral-100: 216 26% 96%;
+    --neutral-150: 220 26% 93%;
+    --neutral-200: 217 25% 90%;
+    --neutral-250: 219 28% 88%;
+    --neutral-300: 217 28% 84%;
+    --neutral-350: 218 30% 75%;
+    --neutral-400: 218 30% 69%;
+    --neutral-450: 218 21% 61%;
+    --neutral-500: 219 15% 54%;
+    --neutral-550: 219 17% 43%;
+    --neutral-600: 219 22% 36%;
+    --neutral-650: 219 24% 33%;
+    --neutral-700: 218 28% 29%;
+    --neutral-750: 218 32% 25%;
+    --neutral-800: 219 37% 22%;
+    --neutral-850: 219 42% 18%;
+    --neutral-900: 221 57% 11%;
+    --neutral-950: 221 78% 7%;
+    --neutral2-100: 204 24% 96%;
+    --neutral2-150: 223 23% 94%;
+    --neutral2-200: 220 20% 91%;
+    --neutral2-25: 120 100% 100%;
+    --neutral2-250: 222 16% 88%;
+    --neutral2-300: 236 18% 85%;
+    --neutral2-350: 236 12% 75%;
+    --neutral2-400: 231 11% 65%;
+    --neutral2-450: 237 9% 56%;
+    --neutral2-50: 180 23% 97%;
+    --neutral2-500: 232 9% 48%;
+    --neutral2-550: 233 11% 44%;
+    --neutral2-600: 232 12% 36%;
+    --neutral2-650: 232 14% 32%;
+    --neutral2-700: 235 15% 28%;
+    --neutral2-750: 234 16% 25%;
+    --neutral2-800: 237 19% 24%;
+    --neutral2-850: 233 19% 19%;
+    --neutral2-900: 218 32% 25%;
+    --neutral2-950: 234 17% 11%;
+    --purple-100: 248 37% 92%;
+    --purple-200: 249 37% 85%;
+    --purple-300: 248 37% 77%;
+    --purple-400: 249 36% 70%;
+    --purple-50: 248 40% 96%;
+    --purple-500: 249 36% 62%;
+    --purple-600: 249 37% 55%;
+    --purple-700: 249 37% 41%;
+    --purple-800: 248 36% 27%;
+    --purple-900: 249 36% 14%;
+    --purple-950: 249 37% 7%;
+    --red-100: 0 61% 91%;
+    --red-200: 0 61% 82%;
+    --red-300: 0 61% 72%;
+    --red-400: 0 61% 63%;
+    --red-50: 0 60% 95%;
+    --red-500: 0 61% 54%;
+    --red-600: 0 61% 43%;
+    --red-700: 0 61% 32%;
+    --red-800: 0 61% 22%;
+    --red-900: 0 61% 11%;
+    --red-950: 0 60% 5%;
+  }
+
+  :root {
+    --background: var(--core-white);
+    --foreground: var(--neutral-950);
+
+    --card: var(--core-white);
+    --card-foreground: var(--neutral-950);
+
+    --popover: var(--core-white);
+    --popover-foreground: var(--neutral-950);
+
+    --primary: var(--neutral-900);
+    --primary-foreground: var(--neutral-50);
+
+    --secondary: var(--neutral-100);
+    --secondary-foreground: var(--neutral-900);
+
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-500);
+
+    --accent: var(--neutral-100);
+    --accent-foreground: var(--neutral-900);
+
+    --destructive: var(--red-500);
+    --destructive-foreground: var(--neutral-50);
+
+    --border: var(--neutral-200);
+    --input: var(--neutral-200);
+    --ring: var(--neutral-500);
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: var(--neutral-950);
+    --foreground: var(--neutral-50);
+
+    --card: var(--neutral-950);
+    --card-foreground: var(--neutral-50);
+
+    --popover: var(--neutral-950);
+    --popover-foreground: var(--neutral-50);
+
+    --primary: var(--neutral-50);
+    --primary-foreground: var(--neutral-900);
+
+    --secondary: var(--neutral-800);
+    --secondary-foreground: var(--neutral-50);
+
+    --muted: var(--neutral-800);
+    --muted-foreground: var(--neutral-400);
+
+    --accent: var(--neutral-800);
+    --accent-foreground: var(--neutral-50);
+
+    --destructive: var(--red-900);
+    --destructive-foreground: var(--neutral-50);
+
+    --border: var(--neutral-850);
+    --input: var(--neutral-700);
+    --ring: var(--neutral-400);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  p {
+    @apply text-sm leading-6 [&:not(:first-child)]:mt-5;
+  }
+}
